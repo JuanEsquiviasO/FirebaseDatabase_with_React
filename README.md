@@ -1,1 +1,1 @@
-# Firebase Database with React.js
+# Store files in the cloud with Firebase Storage and React
