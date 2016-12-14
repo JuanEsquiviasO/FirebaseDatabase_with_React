@@ -84,36 +84,44 @@
 	};
 	_firebase2.default.initializeApp(config);
 
-	var App = function (_React$Component) {
-		_inherits(App, _React$Component);
+	var FileUpload = function (_React$Component) {
+		_inherits(FileUpload, _React$Component);
 
-		function App() {
-			_classCallCheck(this, App);
+		function FileUpload() {
+			_classCallCheck(this, FileUpload);
 
-			var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+			var _this = _possibleConstructorReturn(this, (FileUpload.__proto__ || Object.getPrototypeOf(FileUpload)).call(this));
 
 			_this.state = {
-				name: 'Hunter'
+				uploadValue: 0
 			};
 			return _this;
 		}
 
-		_createClass(App, [{
+		_createClass(FileUpload, [{
+			key: 'handleOnChange',
+			value: function handleOnChange(event) {}
+		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					'h1',
+					'div',
 					null,
-					'Hi ',
-					this.state.name
+					_react2.default.createElement('progress', { value: this.state.uploadValue, max: '100' }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('input', { type: 'file', onChange: this.handleOnChange.bind(this) }),
+					_react2.default.createElement('br', null),
+					this.state.nessage,
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('img', { width: '100', src: this.state.picture })
 				);
 			}
 		}]);
 
-		return App;
+		return FileUpload;
 	}(_react2.default.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
+	_reactDom2.default.render(_react2.default.createElement(FileUpload, null)), document.getElementById('root');
 
 /***/ },
 /* 2 */
